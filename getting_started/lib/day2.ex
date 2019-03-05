@@ -1,4 +1,6 @@
 defmodule GettingStarted.Greeter do
+  use GettingStarted.Hello
+
   def hello() do
     "Hello World!"
   end
