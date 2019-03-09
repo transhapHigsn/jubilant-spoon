@@ -14,3 +14,24 @@ defmodule GettingStarted.MyMacro do
     end
   end
 end
+
+# puts same value two times
+defmodule Example1 do
+  defmacro double_puts(expr) do
+    quote bind_quoted: [expr: expr] do
+      IO.puts(expr)
+      IO.puts(expr)
+    end
+  end
+end
+
+
+# puts two different values
+defmodule Example2 do
+  defmacro double_puts(expr) do
+    quote do
+      IO.puts(unquote(expr))
+      IO.puts(unquote(expr))
+    end
+  end
+end
